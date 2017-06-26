@@ -32,5 +32,7 @@ RUN pacman -S --noconfirm \
 WORKDIR /usr/bin
 
 VOLUME "/home/ckb/.config/ckb"
+RUN chown -R ckb:ckb /home/ckb/.config
+USER ckb
 
 CMD ["/usr/bin/ckb-daemon"]
